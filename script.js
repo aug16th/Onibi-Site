@@ -80,3 +80,13 @@ $(document).ready(function() {
 });
 
   
+
+
+
+// current year
+
+
+$(document).ready(function() {
+    var currentYear = new Date().getFullYear();
+    $('#currentYear').text(currentYear);
+});
