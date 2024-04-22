@@ -3,6 +3,18 @@ body {
     margin: 0;
     padding: 0;
 }
+
+body::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+  
+  body::-webkit-scrollbar-track {
+    background: #1e1e24;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background: #6649b8;
+  }
 header {
     position: fixed;
     top: 0;
@@ -86,7 +98,7 @@ header {
     position: relative;
     display: flex;
     justify-content: center;
-    align-items: end;
+    align-items: center;
     min-height: calc(100vh - 12rem);
     padding-top: 12rem;
     background: url(static/Onibi-Steam-Page-TemplateWebsite.png) no-repeat;
@@ -96,7 +108,7 @@ header {
 
 
 .onibi-icon {
-    width: 600px; 
+    width: 900px; 
     height: auto;  
 }
 
