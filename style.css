@@ -1,0 +1,287 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: transparent;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    transition: background-color 0.3s ease;
+    align-items: center;
+    z-index: 1; 
+}
+
+
+/* .logo.expanded {
+    transform: translateY(40px); 
+} */
+
+.logo{
+    transition: width 0.5s ease;
+    padding: 4%;
+    width: 400px;
+}
+.logo.adjusted {
+    width: 300px; /* Set the desired width */
+}
+
+.navbar{
+    display: flex;
+    font-size: 15px;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+.social-media {
+    margin-right: 20px; 
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon-container {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 5%;
+}
+.icon-container, .twitch-container, .discord-container {
+    margin: 0 10px; /* Adjust spacing between icons */
+}
+
+.svg-icon {
+    width: 30px; /* Set default size for icons */
+}
+
+.svg-icon {
+    width: 50px;
+    transition: transform 0.5s ease;
+    height: auto;
+}
+.discord-container {
+    background-color:#5865F2;
+    padding: 10px 20px 10px 20px;
+    margin: 10px;
+    border-radius:  5%;
+}
+
+.discord-icon {
+    width: 100px;
+    margin-top: 3px;
+    height: auto;
+}
+.svg-icon:hover{
+    rotate: rotate(360deg);
+}
+/* home section */
+.home {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    min-height: calc(100vh - 12rem);
+    padding-top: 12rem;
+    background: url(static/Onibi-Steam-Page-TemplateWebsite.png) no-repeat;
+    background-size: cover;
+    background-position: top center;
+}
+
+
+.onibi-icon {
+    width: 600px; 
+    height: auto;  
+}
+
+/* about section */
+
+.about {
+    font-size: 2.2rem;
+    background: #16161666;
+    flex: 1;
+    background-color: #080808cc;
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.about .row {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.about .row .content {
+    flex: 1 1 42rem;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+}
+
+.about .row .content .title {
+    color: #fff;
+    font-size: 3rem;
+    display: flex;
+    justify-content: center;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.about .row .content p {
+    color: #fff;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.about .row .content ul {
+    color: #fff;
+}
+
+.about .row .content ul li {
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.about .row .content ul li strong {
+    color: #fff;
+}
+
+
+
+
+
+
+
+/* media queries */
+@media (max-width: 991px) {
+    html {
+        font-size: 55%;
+    }
+
+    .header {
+        padding: 3rem;
+
+    }
+
+    section {
+        padding: 2rem;
+    }
+    
+}
+
+@media (max-width: 768px) {
+    .heading {
+        font-size: 6rem;
+    }
+    .heading span {
+        font-size: 2.3rem;
+    }
+    .onibi-icon {
+        width: 300px; 
+        height: auto;  
+    }
+    .navbar{
+        margin-right: 20px;
+    }
+
+    .home {
+        text-align: center;
+    
+        min-height: 20vh;
+        background-attachment: scroll;
+    }
+    .logo.adjusted-mobile {
+        width: 200px; /* Set the width for mobile screens */
+    }
+
+}
+
+@media (max-width: 576px) {
+    .home {
+        background-size: cover;
+        background-position: top center;
+
+    }
+    .navbar{
+        width: 50px;
+    }
+    .onibi-icon {
+        width: 300px; 
+        height: auto;  
+    }
+}
+
+@media (min-width: 577px) and (max-width: 992px) {
+    .home {
+        /* Adjust background properties for tablets */
+        background-size: cover;
+        background-position: top center;
+    }
+    .navbar{
+        font-size: 20px;
+    }
+    .onibi-icon {
+        width: 300px; 
+        height: auto;  
+    }
+}
+
+@media (min-width: 993px) {
+    .home {
+        /* Adjust background properties for desktop */
+        background-size: cover;
+        background-position: top center;
+    }
+    .navbar{
+        font-size: 20px;
+    }
+}
+
+
+@media screen and (max-width: 768px) {
+    .svg-icon {
+        width: 35px; /* Adjust icon size for smaller screens */
+    }
+    .discord-container{
+        padding: 5%;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .svg-icon {
+        width: 40px; /* Further adjust icon size for even smaller screens */
+    }
+}
+
+
+
+.hidden {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-40%);
+    transition: all 1s;
+    }
+    .show{
+        opacity: 1;
+        filter: blur(0);
+        transform: translateX(0);
+    }
+
+
+    @media (prefers-reduced-motion) {
+        .hidden {
+        transition: none;
+        }
+        }
