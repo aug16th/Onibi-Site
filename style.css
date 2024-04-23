@@ -210,9 +210,6 @@ header {
     margin: 0 auto;
     max-width: 900px;
   }
-  .chill{
-    color: #FFE2AD;
-  }
 
   /* footer */
 .footer{
@@ -222,7 +219,7 @@ header {
   .footer .credit {
     text-align: center;
     font-size: 2rem;
-    
+    white-space: nowrap;
     margin-top: 1rem;
     color: white;
 }
@@ -363,6 +360,23 @@ header {
     section {
         min-height: 30vh;
     }
+    .credit{
+        display: flex;
+        justify-content: center;
+        position: fixed;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: #333; 
+        padding: 10px; 
+        color: white;
+        z-index: 9999;
+    }
+
+    .credit span {
+        margin-right: 0; 
+        margin-bottom: 5px; 
+    }
 
 
     .navbar.active {
@@ -370,11 +384,11 @@ header {
         padding: 10%;
         flex-direction: column;
         background-color: #141418;;
-        border-bottom: 1px solid #fff; /* Change border color to white */
-        padding: 10px 0; /* Add padding to improve spacing */
+        border-bottom: 1px solid #fff;
+        padding: 10px 0; 
         width: 100%;
         position: absolute;
-        top: 130px; /* Adjust top position based on your header height */
+        top: 130px; 
         right: 0;
         left: 0;
         z-index: 1;
