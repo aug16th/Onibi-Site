@@ -218,7 +218,7 @@ header {
 
   .footer .credit {
     text-align: center;
-    font-size: 2rem;
+    font-size: 12px;
     white-space: nowrap;
     margin-top: 1rem;
     color: white;
@@ -366,6 +366,7 @@ header {
         position: fixed;
         left: 0;
         bottom: 0;
+        gap: 10px;
         width: 100%;
         background-color: #333; 
         padding: 10px; 

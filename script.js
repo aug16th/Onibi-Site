@@ -35,23 +35,23 @@ $(document).ready(function() {
 
 
 
-$(document).ready(function() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            console.log(entry);
-            if (entry.isIntersecting) {
-                $(entry.target).addClass('show');
-                observer.unobserve(entry.target); // Stop observing after the first intersection
-            } else {
-                $(entry.target).removeClass('show');
-            }
-        });
-    }, { once: true }); // Ensure the observer runs only once
+// $(document).ready(function() {
+//     const observer = new IntersectionObserver((entries) => {
+//         entries.forEach((entry) => {
+//             console.log(entry);
+//             if (entry.isIntersecting) {
+//                 $(entry.target).addClass('show');
+//                 observer.unobserve(entry.target); // Stop observing after the first intersection
+//             } else {
+//                 $(entry.target).removeClass('show');
+//             }
+//         });
+//     }, { once: true }); // Ensure the observer runs only once
   
-    $('.hidden').each(function() {
-        observer.observe(this);
-    });
-  });
+//     $('.hidden').each(function() {
+//         observer.observe(this);
+//     });
+//   });
 
 
 //   $(document).ready(function() {
