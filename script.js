@@ -11,26 +11,6 @@ $(document).ready(function() {
 });
 
 
-$(document).ready(function() {
-    $(window).scroll(function() {
-        var scrollTop = $(this).scrollTop();
-        var header = $('header');
-
-        
-        var scrolledBackgroundColor = 'black'; 
-
-       
-        var topBackgroundColor = 'transparent';
-
-        // Check if the user has scrolled away from the top of the page
-        if (scrollTop === 0) {
-            header.css('backgroundColor', topBackgroundColor); // Set background color to transparent if at the top
-        } else {
-            header.css('backgroundColor', scrolledBackgroundColor); // Set background color when scrolled away from the top
-        }
-    });
-});
-
 
 
 
@@ -56,28 +36,6 @@ $(document).ready(function() {
 
 //   $(document).ready(function() {
 //     var headerLogo = $('.logo');
-
-//     // Function to adjust logo size for larger screens
-//     function adjustLogoSize() {
-//         headerLogo.addClass('adjusted'); // Add the 'adjusted' class to the logo for larger screens
-//         $(window).off('scroll', adjustLogoSize); // Remove the scroll event listener
-//     }
-
-//     // Function to adjust logo size for smaller screens
-//     function adjustLogoSizeMobile() {
-//         headerLogo.addClass('adjusted-mobile'); // Add the 'adjusted-mobile' class to the logo for smaller screens
-//         $(window).off('scroll', adjustLogoSizeMobile); // Remove the scroll event listener
-//     }
-
-//     // Listen for the scroll event
-//     $(window).scroll(function() {
-//         if ($(window).width() <= 768) {
-//             adjustLogoSizeMobile(); // Apply logo size adjustment for smaller screens
-//         } else {
-//             adjustLogoSize(); // Apply logo size adjustment for larger screens
-//         }
-//     });
-// });
 
   
 

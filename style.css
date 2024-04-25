@@ -8,28 +8,45 @@
     --bg-primary: #23232e;
     --bg-secondary: #141418;
     --transition-speed: 600ms;
-    
 }
 
 * {
-    
     font-family: "Roboto Mono", monospace;
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
-    
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     outline: none;
     border: none;
     text-decoration: none;
-    transition: all .2s linear;
+    transition: all .4s linear;
+}
+
+html{
+    scroll-snap-type: y mandatory;
+    scroll-snap-align: start;
+    scroll-padding-top: 100px;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./static/Forest-Stairs-Splash-Web.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    filter: brightness(65%);
+
 }
 
 .heading {
-
-    font-size: 4rem;
+    font-size: 3rem;
     color: whitesmoke;
     padding: 2%;
     text-transform: uppercase;
@@ -39,9 +56,6 @@
     pointer-events: none;
     position: relative;
     z-index: 2;
-}
-section {
-    padding: 2rem 9%;
 }
 
 .heading span {
@@ -54,31 +68,36 @@ section {
     font-size: 2rem;
 }
 
-
-
 body {
     font-family: Arial, sans-serif;
+    scroll-behavior: smooth;
     margin: 0;
     padding: 0;
 }
+    
+
 
 body::-webkit-scrollbar {
     width: 0.25rem;
-  }
-  
-  body::-webkit-scrollbar-track {
+    scrollbar-width: thin;
+}
+
+body::-webkit-scrollbar-track {
     background: #1e1e24;
-  }
-  
-  body::-webkit-scrollbar-thumb {
+}
+
+body::-webkit-scrollbar-thumb {
     background: #6649b8;
-  }
+    border-radius: 0.125rem; 
+}
+
+
 header {
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
-    background-color: transparent;
+    background-color: black;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -87,69 +106,62 @@ header {
     z-index: 1; 
 }
 
-
-/* .logo.expanded {
-    transform: translateY(40px); 
-} */
-
-.logo{
+.logo {
     transition: width 0.5s ease;
     padding: 4%;
-    width: 300px;
+    width: 100px;
     transition: transform 0.5s ease;
 }
 
 .logo-container {
     margin-left: 20px;
-    
 }
 
 .logo-container:hover .logo {
     transform: scale(1.5);
 }
 
-
 .logo.adjusted {
     width: 300px; /* Set the desired width */
 }
 
-.navbar{
+
+.onibi-icon{
+    width: 500px;
+}
+
+.navbar {
     display: flex;
     justify-content: flex-end;
     gap: 20px;
 }
-.social-media {
-    margin-right: 20px; 
-}
 
 .social-media {
+    margin-right: 20px; 
     display: flex;
     gap: 20px;
     align-items: center;
 }
 
-
-.icon-container {
-    padding: 10px;
-    margin: 10px;
-    border-radius: 5%;
-}
-.icon-container, .twitch-container, .discord-container {
-    margin: 0 10px; /* Adjust spacing between icons */
+.icon-container,
+.twitch-container,
+.discord-container {
+    margin: 0 10px; 
 }
 
 .svg-icon {
-    width: 30px; /* Set default size for icons */
+    width: 30px; 
 }
 
 .svg-icon {
-    width: 50px;
+    width: 30px; /* value was 50px */
     transition: transform 0.5s ease;
     height: auto;
 }
+
 .discord-container {
     background-color:#5865F2;
-    padding: 10px 20px 10px 20px;
+    padding: 5px 10px 5px 10px;  /* value was 10px 20px 10px 20px */
     margin: 10px;
     border-radius:  5%;
 }
@@ -159,83 +171,75 @@ header {
     margin-top: 3px;
     height: auto;
 }
-.svg-icon:hover{
+
+.svg-icon:hover {
     rotate: rotate(360deg);
 }
+
 /* home section */
 .home {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: top;
     min-height: 100vh;
-    padding-top: 12rem;
     background: url(static/Onibi-Steam-Page-TemplateWebsite.png) no-repeat;
     background-attachment: fixed;
     background-size: cover;
     background-position: center;
 }
 
-.home .row {
+.centered-content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 1.5rem;
-}
-
-.onibi-icon {
-    width: 700px; 
-    height: auto;  
-}
-
-/* about section */
-.steam-section {
-    font-size: 2.2rem;
-    background: linear-gradient(135deg, #1a1a1a, #333);
-    background-color: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(10px);
     justify-content: center;
-    text-align: center;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transition: transform 0.3s ease;
-  }
-  
-  .steam-logo img {
-    width: 100px; 
-    height: auto;
-    margin-bottom: 20px; 
-  }
-  
-  .centered-text {
-    margin: 0 auto;
-    max-width: 900px;
-  }
+    align-items: center;
+}
 
-  /* footer */
-.footer{
+.content {
+    text-align: center;
+}
+
+.steam-logo {
+    margin-top: 20px; 
+}
+
+
+.heading {
+    font-size: 2rem; 
+    color: whitesmoke;
+    text-transform: uppercase;
+    letter-spacing: 0.2rem;
+    margin-bottom: 20px; 
+}
+.steam-logo img {
+    width: 150px; 
+    height: auto; 
+}
+
+/* footer */
+.footer {
     background: linear-gradient(135deg, #1a1a1a, #333);
 }
 
-  .footer .credit {
+.footer .credit {
     text-align: center;
     font-size: 12px;
     white-space: nowrap;
-    margin-top: 1rem;
     color: white;
 }
 
-
-#baka{
+#baka {
     display: flex;
     justify-content: center;
     padding: 2%;
-
+    margin-bottom: 20px;
 }
 
 .btn {
     display: inline-block;
-    text-decoration: none;
-    padding: 50px;
+    padding: .9rem 1.5rem;
     border: var(--border);
     border-radius: var(--border-radius);
     color: white;
@@ -243,14 +247,14 @@ header {
     cursor: pointer;
     margin-top: 1rem;
     font-size: 1.7rem;
-    
 }
+
 .btn:hover {
     color: #90f6d7;
-  box-shadow: 0 0 5px #90f6d7;
-  text-shadow: 0 0 5px #90f6d7;
-  transform: scale(1.1);
-  box-shadow: 0 0 15px #90f6d7;
+    box-shadow: 0 0 5px #90f6d7;
+    text-shadow: 0 0 5px #90f6d7;
+    transform: scale(1.1);
+    box-shadow: 0 0 15px #90f6d7;
 }
 
 #menu-btn {
@@ -260,6 +264,66 @@ header {
     display: none;
 }
 
+
+/* video section */
+
+section{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.video-section {
+    scroll-snap-align: start;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    overflow: hidden;
+    background: transparent;
+    background-color:rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 80px;
+    padding: 40px;
+    margin: 80px 20px 80px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+              
+}
+
+.footage-section {
+    height: 100vh;
+}
+  
+
+.video-container {
+    flex: 1;
+    margin-right: 20px;
+    
+}
+
+.video-container video {
+    width: 100%;
+    border-radius: 16px;
+}
+
+.text-container {
+    flex: 1;
+}
+
+.text-container h2 {
+    font-size: 40px;
+    padding-bottom: 40px;
+    color: white;
+}
+
+.text-container p {
+    font-size: 20px;
+    font-weight: bold;
+    color: #ccc;
+}
+
+
 /* media queries */
 @media (max-width: 991px) {
     html {
@@ -268,18 +332,14 @@ header {
 
     .header {
         padding: 3rem;
-
     }
 
-    section {
-        padding: 2rem;
-    }
-    
 }
 
 @media (max-width: 768px) {
     .heading {
         font-size: 6rem;
+        z-index: 0;
     }
     .heading span {
         font-size: 2.3rem;
@@ -290,22 +350,14 @@ header {
     }
 
     .home {
-        text-align: center;
-    
-        min-height: 20vh;
         background-attachment: scroll;
     }
-    .logo.adjusted-mobile {
-        width: 200px; /* Set the width for mobile screens */
-    }
-
 }
 
 @media (max-width: 576px) {
     .home {
         background-size: cover;
         background-position: top center;
-
     }
     .onibi-icon {
         width: 300px; 
@@ -331,15 +383,13 @@ header {
         background-size: cover;
         background-position: top center;
     }
-
 }
-
 
 @media screen and (max-width: 768px) {
     .svg-icon {
         width: 35px; /* Adjust icon size for smaller screens */
     }
-    .discord-container{
+    .discord-container {
         padding: 1.5%;
     }
 }
@@ -350,17 +400,12 @@ header {
     }
 }
 
-
 @media screen and (max-width: 768px) {
     .navbar {
         display: none;
-       
     }
 
-    section {
-        min-height: 30vh;
-    }
-    .credit{
+    .credit {
         display: flex;
         justify-content: center;
         position: fixed;
@@ -379,7 +424,6 @@ header {
         margin-bottom: 5px; 
     }
 
-
     .navbar.active {
         display: flex;
         padding: 10%;
@@ -389,17 +433,15 @@ header {
         padding: 10px 0; 
         width: 100%;
         position: absolute;
-        top: 130px; 
+        top: 50px; 
         right: 0;
         left: 0;
         z-index: 1;
     }
 
-    
     .navbar.active a:last-child {
         border-bottom: none;
     }
-
 
     .navbar.active .social-media {
         flex-direction: column;
@@ -409,24 +451,68 @@ header {
         display: block;
     }
 }
+@media (max-width: 767px) {
+    /* Add your responsive styles here */
 
-
-
-.hidden {
-    opacity: 0;
-    filter: blur(5px);
-    transform: translateX(-40%);
-    transition: all 1s;
-    }
-    .show{
-        opacity: 1;
-        filter: blur(0);
-        transform: translateX(0);
+    .onibi-icon {
+        width: 200px;
     }
 
+    .steam-logo img {
+        width: 150px;
+    }
 
-    @media (prefers-reduced-motion) {
-        .hidden {
-        transition: none;
-        }
-        }
+    .heading span {
+        font-size: 1.5rem;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 2rem;
+    }
+
+    .footer .credit {
+        font-size: 10px;
+    }
+}
+
+/* Media query for screens smaller than 576px (phones) */
+@media (max-width: 575px) {
+
+    .steam-logo img {
+        width: 100px;
+    }
+
+    .heading span {
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 5px 10px;
+        font-size: 1.8rem;
+    }
+
+    .footer .credit {
+        font-size: 10px;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .video-section {
+        flex-direction: column;
+    }
+
+    .video-container {
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    .video-container iframe {
+        height: 250px;
+    }
+
+    .text-container {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
