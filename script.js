@@ -27,7 +27,15 @@ $(document).ready(function() {
 
 
 
-
+window.addEventListener("scroll", function() {
+        var header = document.querySelector("header");
+      
+        if (window.scrollY === 0) {
+          header.style.backgroundColor = "transparent";
+        } else {
+          header.style.backgroundColor = "black";
+        }
+      });
 
 
 
