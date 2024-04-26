@@ -5,7 +5,7 @@
 }
 
 * {
-    font-family: "Roboto Mono", monospace;
+    font-family: "Roboto", sans-serif;
     font-optical-sizing: auto;
     font-weight: weight;
     font-style: normal;
@@ -42,7 +42,7 @@ body::before {
     background-size: cover;
     background-position: center;
     z-index: -1;
-    filter: brightness(65%);
+    /*filter: brightness(65%);*/
 
 }
 
@@ -105,7 +105,7 @@ body::-webkit-scrollbar-track {
 }
 
 body::-webkit-scrollbar-thumb {
-    background: #6649b8;
+    background: #e2eaec;
     border-radius: 0.125rem; 
 }
 
@@ -253,7 +253,7 @@ header {
 
 .btn:hover {
     color: #90f6d7; 
-    box-shadow: 0 0 10px 5px rgba(248, 229, 89, 0.8), 0 0 25px 10px rgba(248, 229, 89, 0.8); 
+    /*box-shadow: 0 0 10px 5px rgba(248, 229, 89, 0.8), 0 0 25px 10px rgba(248, 229, 89, 0.8); */
     transform: scale(1.1); 
 }
 
@@ -286,7 +286,7 @@ section{
     overflow: hidden;
     background: transparent;
     background-color:rgba(0, 0, 0, 0.5);
-    backdrop-filter: blur(10px);
+    /*backdrop-filter: blur(10px);*/
     border-radius: 80px;
     padding: 40px;
     margin: 80px 20px 80px;
@@ -314,6 +314,7 @@ section{
 }
 
 .text-container {
+    border-radius: 80px;
     flex: 1;
 }
 
@@ -324,6 +325,7 @@ section{
 }
 
 .text-container p {
+    overflow-wrap: break-word;
     font-size: 20px;
     font-weight: bold;
     color: #ccc;
