@@ -328,7 +328,7 @@ section{
 
 @media (max-width: 768px) {
     .heading {
-        font-size: 6rem;
+        font-size: 2rem;
         z-index: 0;
     }
     .heading span {
@@ -336,18 +336,20 @@ section{
     }
     .onibi-icon {
         width: 300px; 
+        margin-top: 50px;
         height: auto;  
-    }
-
-    .home {
-        background-attachment: scroll;
     }
 
     #baka{
         width: 100px; 
         height: 100px;
     }
-
+    .home {
+        text-align: center;
+        min-height: 20vh;
+        background-attachment: scroll;
+        padding: 30%;
+    }
     
 }
 
@@ -376,7 +378,6 @@ section{
 
 @media (min-width: 993px) {
     .home {
-        /* Adjust background properties for desktop */
         background-size: cover;
         background-position: top center;
     }
@@ -429,7 +430,7 @@ section{
         padding: 10px 0; 
         width: 100%;
         position: absolute;
-        top: 50px; 
+        top: 48px; 
         right: 0;
         left: 0;
         z-index: 1;
