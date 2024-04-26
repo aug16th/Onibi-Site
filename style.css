@@ -2,12 +2,6 @@
     --main-color: black;
     --border-radius: 95% 4% 97% 5% / 4% 94% 3% 95%;
     --border: .2rem solid  #352f44;
-    --border-hover: .2rem dashed #fdb44b;
-    --text-primary: #b6b6b6;
-    --text-secondary: #ececec;
-    --bg-primary: #23232e;
-    --bg-secondary: #141418;
-    --transition-speed: 600ms;
 }
 
 * {
@@ -24,10 +18,11 @@
     transition: all .4s linear;
 }
 
-html{
+html {
     scroll-snap-type: y mandatory;
     scroll-snap-align: start;
-    scroll-padding-top: 100px;
+    scroll-snap-stop: always;
+    scroll-behavior: smooth; 
 }
 
 body::before {
@@ -205,7 +200,6 @@ header {
     margin-top: 20px; 
 }
 
-
 .heading {
     font-size: 2rem; 
     color: whitesmoke;
@@ -213,10 +207,7 @@ header {
     letter-spacing: 0.2rem;
     margin-bottom: 20px; 
 }
-.steam-logo img {
-    width: 150px; 
-    height: auto; 
-}
+
 
 /* footer */
 .footer {
@@ -231,30 +222,21 @@ header {
 }
 
 #baka {
-    display: flex;
-    justify-content: center;
-    padding: 2%;
-    margin-bottom: 20px;
+    display: inline-block;
+    width: 200px; 
+    height: 200px;
+    border-radius: 50%; 
+    background-image: url('./static/steam-logo.png'); 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center; 
 }
 
-.btn {
-    display: inline-block;
-    padding: .9rem 1.5rem;
-    border: var(--border);
-    border-radius: var(--border-radius);
-    color: white;
-    background: #262626;
-    cursor: pointer;
-    margin-top: 1rem;
-    font-size: 1.7rem;
-}
 
 .btn:hover {
-    color: #90f6d7;
-    box-shadow: 0 0 5px #90f6d7;
-    text-shadow: 0 0 5px #90f6d7;
-    transform: scale(1.1);
-    box-shadow: 0 0 15px #90f6d7;
+    color: #90f6d7; 
+    box-shadow: 0 0 10px 5px rgba(248, 229, 89, 0.8), 0 0 25px 10px rgba(248, 229, 89, 0.8); 
+    transform: scale(1.1); 
 }
 
 #menu-btn {
@@ -265,11 +247,17 @@ header {
 }
 
 
-/* video section */
+/* gif */
+
+.loading-gif {
+    max-width: auto; 
+}
+
 
 section{
     display: flex;
     justify-content: center;
+    scroll-snap-align: start;
     align-items: center;
     
 }
@@ -295,7 +283,7 @@ section{
 .footage-section {
     height: 100vh;
 }
-  
+
 
 .video-container {
     flex: 1;
@@ -334,6 +322,7 @@ section{
     .header {
         padding: 3rem;
     }
+    
 
 }
 
@@ -353,6 +342,13 @@ section{
     .home {
         background-attachment: scroll;
     }
+
+    #baka{
+        width: 100px; 
+        height: 100px;
+    }
+
+    
 }
 
 @media (max-width: 576px) {
@@ -388,7 +384,7 @@ section{
 
 @media screen and (max-width: 768px) {
     .svg-icon {
-        width: 35px; /* Adjust icon size for smaller screens */
+        width: 35px; 
     }
     .discord-container {
         padding: 1.5%;
@@ -397,7 +393,7 @@ section{
 
 @media screen and (max-width: 576px) {
     .svg-icon {
-        width: 40px; /* Further adjust icon size for even smaller screens */
+        width: 40px; 
     }
 }
 
@@ -409,15 +405,14 @@ section{
     .credit {
         display: flex;
         justify-content: center;
-        position: fixed;
         left: 0;
         bottom: 0;
         gap: 10px;
         width: 100%;
         background-color: #333; 
-        padding: 10px; 
+        padding: 5px; 
         color: white;
-        z-index: 9999;
+        z-index: 1;
     }
 
     .credit span {
@@ -453,14 +448,9 @@ section{
     }
 }
 @media (max-width: 767px) {
-    /* Add your responsive styles here */
 
     .onibi-icon {
         width: 200px;
-    }
-
-    .steam-logo img {
-        width: 150px;
     }
 
     .heading span {
@@ -477,12 +467,8 @@ section{
     }
 }
 
-/* Media query for screens smaller than 576px (phones) */
 @media (max-width: 575px) {
 
-    .steam-logo img {
-        width: 100px;
-    }
 
     .heading span {
         font-size: 1rem;
@@ -516,4 +502,28 @@ section{
         text-align: center;
         margin-bottom: 30px;
     }
+}
+
+
+
+
+
+/* page loadout */
+
+/* loading screen */
+.loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+#content {
+    display: none;
 }

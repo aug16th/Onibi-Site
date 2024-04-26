@@ -11,6 +11,22 @@ $(document).ready(function() {
 });
 
 
+// preloader
+
+$(document).ready(function() {
+    // Hide content until loaded
+    $('#content').hide();
+
+    // Hide loading screen and show content when page is fully loaded
+    $(window).on('load', function() {
+        $('#loadingScreen').fadeOut('slow', function() {
+            $('#content').fadeIn('slow');
+        });
+    });
+});
+
+
+
 
 
 
