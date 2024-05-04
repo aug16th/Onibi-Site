@@ -21,7 +21,6 @@
 html {
     scroll-snap-type: y mandatory;
     scroll-snap-align: start;
-    scroll-snap-stop: always;
     scroll-behavior: smooth; 
     scroll-padding-top: 4.5rem;
 }
@@ -42,12 +41,11 @@ body::before {
     background-size: cover;
     background-position: center;
     z-index: -1;
-    /*filter: brightness(65%);*/
 
 }
 
 .heading {
-    font-size: 3rem;
+    font-size: 2rem;
     color: whitesmoke;
     padding: 2%;
     text-transform: uppercase;
@@ -56,7 +54,6 @@ body::before {
     text-align: center;
     pointer-events: none;
     position: relative;
-    z-index: 2;
 }
 
 .paragraph {
@@ -218,14 +215,6 @@ header {
     margin-top: 20px; 
 }
 
-.heading {
-    font-size: 2rem; 
-    color: whitesmoke;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-}
-
-
 /* footer */
 .footer {
     background: linear-gradient(135deg, #1a1a1a, #333);
@@ -341,18 +330,13 @@ section{
     .header {
         padding: 3rem;
     }
+
     
 
 }
 
 @media (max-width: 768px) {
-    .heading {
-        font-size: 2rem;
-    
-    }
-    .heading span {
-        font-size: 2.3rem;
-    }
+
     .onibi-icon {
         width: 300px; 
         margin-top: 90px;
@@ -422,6 +406,11 @@ section{
     .svg-icon {
         width: 40px; 
     }
+
+    .heading{
+        font-size: 10px;
+    }
+    
 }
 
 @media screen and (max-width: 768px) {
@@ -480,9 +469,6 @@ section{
         width: 200px;
     }
 
-    .heading span {
-        font-size: 1.5rem;
-    }
 
     .btn {
         padding: 10px 20px;
@@ -497,8 +483,11 @@ section{
 @media (max-width: 575px) {
 
 
-    .heading span {
-        font-size: 1rem;
+    .text-container h2 {
+        font-size: 30px;
+    }
+    .text-container p {
+        font-size: 19px;
     }
 
     .btn {
@@ -514,6 +503,16 @@ section{
 @media only screen and (max-width: 768px) {
     .video-section {
         flex-direction: column;
+        border-radius: 40px;
+        padding: 0;
+        margin: 0;
+    }
+
+    .footage-section {
+        flex-direction: column;
+        border-radius: 10px;
+        padding: 0;
+        margin: 0;
     }
 
     .video-container {
@@ -529,6 +528,7 @@ section{
         text-align: center;
         margin-bottom: 30px;
     }
+
 }
 
 
@@ -543,7 +543,7 @@ section{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background-color: #ffffff;
+    background-color: black;
     display: flex;
     justify-content: center;
     align-items: center;
